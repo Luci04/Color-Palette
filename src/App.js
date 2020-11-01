@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Palette from './Palette';
+import PaletteList from './PaletteList';
+import seedColors from "./seedColors";
+import { generatePalette } from './colorHelpers';
+import { Route, Switch } from 'react-router-dom';
+import SingleColorPalette from './SingleColorPalette'
+import NewPaletteForm from './NewPaletteForm'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  findPalette(id) {
+    return seedColors.find(function (palette) {
+      return palette.id === id;
+    });
+  }
+  render() {
+    return (
+      <Switch>
+
+        <Route
+          exact
+          path="/Color-Palette"
+          render={(routePorps) => <PaletteList palettes={seedColors} {...routePorps} />} />
+        <Route
+          exact
+          path='/palette/:id'
+          render={routePorps => (
+            <Palette
+              palette={generatePalette(
+                this.findPalette(routePorps.match.params.id)
+              )}
+            />
+          )} />
+        <Route
+          exact
+          path="/palette/new"
+          render={() => <NewPaletteForm />} />
+
+
+        <Route
+          exact
+          path="/palette/:paletteId/:colorId"
+          render={routePorps => (
+            <SingleColorPalette
+              colorId={routePorps.match.params.colorId}
+              palette={generatePalette(
+                this.findPalette(routePorps.match.params.paletteId)
+              )}
+            />
+          )} />
+      </Switch >
+    )
+  }
+
+  // <div>
+  //   <Palette palette={generatePalette(seedColors[4])} />
+  // </div>
 }
 
 export default App;
