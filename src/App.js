@@ -20,6 +20,11 @@ class App extends Component {
 
         <Route
           exact
+          path="/palette/new"
+          render={() => <NewPaletteForm />} />
+
+        <Route
+          exact
           path="/Color-Palette"
           render={(routePorps) => <PaletteList palettes={seedColors} {...routePorps} />} />
         <Route
@@ -32,11 +37,6 @@ class App extends Component {
               )}
             />
           )} />
-        <Route
-          exact
-          path="/palette/new"
-          render={() => <NewPaletteForm />} />
-
 
         <Route
           exact
