@@ -29,12 +29,14 @@ class App extends Component {
   render() {
     return (
       <Switch>
-
         <Route
           exact
           path="/palette/new"
-          render={(routePorps) => <NewPaletteForm savePalette={this.savePalette}
-            {...routePorps} />}
+          render={(routePorps) => <NewPaletteForm
+            palettes={this.state.palettes}
+            savePalette={this.savePalette}
+            {...routePorps}
+          />}
         />
 
         <Route
