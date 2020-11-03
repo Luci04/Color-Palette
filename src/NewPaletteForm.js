@@ -88,6 +88,8 @@ class NewPaletteForm extends Component {
         this.updatecurrentColor = this.updatecurrentColor.bind(this);
         this.addNewColor = this.addNewColor.bind(this);
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
     }
 
     componentDidMount() {
@@ -129,6 +131,17 @@ class NewPaletteForm extends Component {
         this.setState({ newName: evt.target.value });
     }
 
+    handleSubmit() {
+        let newName = "New Test Palette";
+        const newPalette = {
+            paletteName: newName,
+            id: newName.toLowerCase().replace(/ /g, "-"),
+            colors: this.state.colors
+        }
+        this.props.savePalette(newPalette);
+        this.props.history.push("/Color-Palette");
+    }
+
     render() {
         const { classes } = this.props;
         const { open } = this.state;
@@ -138,6 +151,7 @@ class NewPaletteForm extends Component {
                 <CssBaseline />
                 <AppBar
                     position='fixed'
+                    color="default"
                     className={classNames(classes.appBar, {
                         [classes.appBarShift]: open
                     })}
@@ -147,13 +161,18 @@ class NewPaletteForm extends Component {
                             color='inherit'
                             aria-label='Open drawer'
                             onClick={this.handleDrawerOpen}
-                            className={classNames(classes.menuButton, open && classes.hide)}
-                        >
+                            className={classNames(classes.menuButton, open && classes.hide)}>
                             <MenuIcon />
                         </IconButton>
                         <Typography variant='h6' color='inherit' noWrap>
                             Persistent drawer
-            </Typography>
+                        </Typography>
+                        <Button
+                            varient="contained"
+                            color="primary"
+                            onClick={this.handleSubmit}>
+                            Save Palette
+                        </Button>
                     </Toolbar>
                 </AppBar>
                 <Drawer
