@@ -47,7 +47,7 @@ const styles = theme => ({
         marginRight: "1rem",
     },
     button: {
-        margin: "0 0.5rem"
+        margin: "0 0.5rem",
     },
     link: {
         textDecoration: "none"
@@ -60,10 +60,15 @@ class PaletteFormNav extends Component {
         super(props);
         this.state = { formSowing: false }
         this.showForm = this.showForm.bind(this);
+        this.hideForm = this.hideForm.bind(this);
     }
 
     showForm() {
         this.setState({ formShowing: true });
+    }
+
+    hideForm() {
+        this.setState({ formShowing: false });
     }
 
     render() {
@@ -107,7 +112,7 @@ class PaletteFormNav extends Component {
                          </Button>
                     </div>
                 </AppBar>
-                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />)}
+                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} showForm={this.showForm} hideForm={this.hideForm} />)}
 
             </div>
         )
