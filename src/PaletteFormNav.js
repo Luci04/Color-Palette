@@ -112,7 +112,7 @@ class PaletteFormNav extends Component {
                          </Button>
                     </div>
                 </AppBar>
-                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} showForm={this.showForm} hideForm={this.hideForm} />)}
+                {this.state.formShowing && (<PaletteMetaForm palettes={palettes} showForm={this.showForm} hideForm={this.hideForm} handleSubmit={this.props.handleSubmit} />)}
 
             </div>
         )
