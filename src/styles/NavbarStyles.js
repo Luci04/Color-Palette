@@ -1,3 +1,6 @@
+import { NoEncryption, NoteAddRounded } from '@material-ui/icons';
+import sizes from './sizes';
+
 export default {
     Navbar: {
         display: "flex",
@@ -16,6 +19,11 @@ export default {
         "& a": {
             textDecoration: "none",
             color: "black"
+        },
+        [sizes.down("md")]: {
+            display: "none",
+            width: "150px",
+
         }
     }, slider: {
         width: "340px",
