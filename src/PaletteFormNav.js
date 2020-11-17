@@ -9,9 +9,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import MenuIcon from "@material-ui/icons/Menu";
 import { Button } from "@material-ui/core";
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator'
 import styles from "./styles/PaletteFormNavStyle";
 
 
@@ -35,7 +33,7 @@ class PaletteFormNav extends Component {
 
     render() {
 
-        const { classes, open, handleSubmit, palettes } = this.props;
+        const { classes, open, palettes } = this.props;
 
         return (
             <div className={classes.root}>
