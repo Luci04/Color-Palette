@@ -3,7 +3,7 @@ import sizes from '../styles/sizes'
 
 export default {
     ColorBox: {
-        width: "25%",
+        width: "20%",
         height: props => (props.showingFullPalette ? "25%" : "50%"),
         margin: "0 auto",
         display: "inline-block",

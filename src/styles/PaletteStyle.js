@@ -10,7 +10,7 @@ export default {
         height: "90%"
     },
     goBack: {
-        width: "25%",
+        width: "20%",
         height: "50%",
         margin: "0 auto",
         display: "inline-block",
