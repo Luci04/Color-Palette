@@ -17,7 +17,7 @@ class MiniPalette extends PureComponent {
     }
 
     handleClick() {
-        this.props.gotToPalette(this.props.id);
+        this.props.goToPalette(this.props.id);
     }
 
     render() {

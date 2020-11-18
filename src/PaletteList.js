@@ -7,8 +7,13 @@ import { withStyles } from '@material-ui/styles';
 
 class PaletteList extends Component {
 
+    constructor(props) {
+        super(props);
+        this.gotoPalette = this.gotoPalette.bind(this);
+    }
+
     gotoPalette(id) {
-        this.props.history.push(`/palette/${id}`)
+        this.props.history.push(`/palette/${id}`);
     }
 
     render() {
@@ -16,7 +21,7 @@ class PaletteList extends Component {
         const { palettes, classes, deletePalette } = this.props;
 
         return (
-            <div className={classes.root}>
+            <div className={classes.root} >
                 <div className={classes.container}>
                     <nav className={classes.nav}>
                         <h1 className={classes.heading}>React Colors</h1>

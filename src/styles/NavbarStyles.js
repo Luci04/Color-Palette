@@ -21,8 +21,7 @@ export default {
         },
         [sizes.down("md")]: {
             display: "none",
-            width: "150px",
-
+            width: "150px"
         }
     }, slider: {
         width: "340px",
