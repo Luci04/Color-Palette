@@ -79,7 +79,7 @@ class NewPaletteForm extends Component {
     }
 
     render() {
-        const { classes, maxColors } = this.props;
+        const { classes, maxColors, palettes } = this.props;
         const { open, colors } = this.state;
         const paletteFull = colors.length >= maxColors
 
@@ -87,7 +87,7 @@ class NewPaletteForm extends Component {
             <div className={classes.root}>``
                 <PaletteFormNav
                     open={open}
-                    palettes={this.props.palettes}
+                    palettes={palettes}
                     handleSubmit={this.handleSubmit}
                     handleDrawerOpen={this.handleDrawerOpen}
                 />
