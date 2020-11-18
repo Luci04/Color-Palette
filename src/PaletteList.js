@@ -33,7 +33,7 @@ class PaletteList extends Component {
                                     timeout={1000}>
                                     <MiniPalette
                                         {...palette}
-                                        handleClick={() => this.gotoPalette(palette.id)}
+                                        goToPalette={this.gotoPalette}
                                         handleDelete={deletePalette}
                                         key={palette.id}
                                         id={palette.id} />
