@@ -12,7 +12,6 @@
   - Responsive
   - Click to Copy
   - Get RGBA,RGB and HEX values of Colors
-You can also:-
   - Build Your Own Palette
   - Drag and drop while creating
   - Different Sharpness of Colors
