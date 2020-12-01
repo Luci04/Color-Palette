@@ -20,8 +20,7 @@
 
 ### Tech
 
-Dillinger uses a number of open source projects to work properly:
-
+Color-Palette uses a number of llibraries to work properly:
 * [React] 
 * [Material-UI] - Nav-bar and stuff
 * [chroma.js] -  Gettting diff shades
